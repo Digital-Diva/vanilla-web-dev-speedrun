@@ -14,6 +14,15 @@ const handleFormSubmit = (e) => {
     email: email,
     age: age,
   };
+  curl --location 'https://jsonplaceholder.typicode.com/users' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "firstName": "Refilwe",
+  "secondName": "Seilane",
+  "email": "refilwe.seilane@gmail.com",
+  "message": "Hello, I’m interested in your services."
+}
+'
 
   const userDataAsJson = JSON.stringify(userData);
 
