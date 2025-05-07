@@ -1,19 +1,39 @@
 let form = document.querySelector("form");
 
+class users {
+  constructor(firstName ,lastName ,email ,age  ) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.age = age;
+  }
+}
+
+class userRespond extend user{ 
+  constructor(firstName, lastName, email, age, id) {
+    super(firstName, lastName, email, age);
+    this.id = id;
+  }
+}
+  
 const handleFormSubmit = (e) => {
   let firstName = document.querySelector("#firstName").value;
   let lastName = document.querySelector("#lastName").value;
   let email = document.querySelector("#email").value;
   let age = document.querySelector("#age").value;
+
   let resultView = document.querySelector("#result-view");
 
   e.preventDefault();
-  const userData = {
+
+  const userData = const name = new user(firstName, lastName, email, age);{
     firstName: firstName,
     lastName: lastName,
     email: email,
     age: age,
   };
+  const userDataAsJson = JSON.stringify (userData)
+
   curl --location 'https://jsonplaceholder.typicode.com/users' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -23,7 +43,6 @@ const handleFormSubmit = (e) => {
   "message": "Hello, I’m interested in your services."
 }
 '
-
   const userDataAsJson = JSON.stringify(userData);
 
   console.log(userData);

@@ -45,6 +45,11 @@ input {
   width: 100%;
 }
 
+input::placeholder {
+  color:blue
+  margin-bottom:5px
+}
+
 button {
   align-self: center;
   padding: 10px 20px;
